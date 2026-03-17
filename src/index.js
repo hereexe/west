@@ -2,6 +2,7 @@ import Card from './Card.js';
 import Game from './Game.js';
 import TaskQueue from './TaskQueue.js';
 import SpeedRate from './SpeedRate.js';
+import Creature from './Creature.js';
 
 // Отвечает является ли карта уткой.
 function isDuck(card) {
@@ -29,8 +30,8 @@ function getCreatureDescription(card) {
 
 
 
-class Duck extends Card{
-    constructor(name = "Мирная утка", maxPower = 2, image = ""){
+class Duck extends Card {
+    constructor(name = "Мирная утка", maxPower = 2, image = "") {
         super(name, maxPower, image);
         this.name = name;
         this.power = maxPower;
@@ -67,7 +68,7 @@ const banditStartDeck = [
 ];
 
 
-// Создание игры.
+// Создание игры.   
 const game = new Game(seriffStartDeck, banditStartDeck);
 
 // Глобальный объект, позволяющий управлять скоростью всех анимаций.
