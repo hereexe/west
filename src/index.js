@@ -45,8 +45,8 @@ class Duck extends Card{
     }
 }
 
-class Dog extends Card{
-    constructor(name = "Пес-бандит", maxPower = 3, image = ""){
+class Dog extends Creature {
+    constructor(name = "Пес-бандит", maxPower = 3, image = "") {
         super(name, maxPower, image);
         this.name = name;
         this.power = maxPower;
