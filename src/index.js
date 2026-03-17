@@ -173,6 +173,8 @@ const seriffStartDeck = [
     new Duck(),
     new Duck(),
     new Gatling(),
+    new Gatling(),
+    new Duck(),
 ];
 
 // Колода Бандита, верхнего игрока.
@@ -180,6 +182,8 @@ const banditStartDeck = [
     new Trasher(),
     new Dog(),
     new Dog(),
+    new Lad(),
+    new Lad(),
 ];
 
 
