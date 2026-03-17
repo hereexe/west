@@ -56,7 +56,16 @@ class Dog extends Creature {
 
 class Gatling extends Creature{
     constructor(name = "Gatling", maxPower = 6, image = ""){
-        
+        super(name, maxPower, image);
+        this.name = name;
+        this.power = maxPower;
+    }
+
+    attack(gameContext, continuation){
+        listCard = gameContext.oppositePlayer.table;
+        for (let card of listCard){
+            this.attack(card, );
+        }
     }
 }
 
