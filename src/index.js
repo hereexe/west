@@ -61,6 +61,9 @@ class Dog extends Card{
 }
 
 
+
+
+
 // Колода Шерифа, нижнего игрока.
 const seriffStartDeck = [
     new Duck(),
