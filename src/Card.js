@@ -1,4 +1,4 @@
-import {default as View} from './CardView.js';
+import { default as View } from './CardView.js';
 import TaskQueue from './TaskQueue.js';
 
 const Card = function () {
@@ -36,7 +36,7 @@ const Card = function () {
     // Можно переопределить в наследниках.
     // Позволяет определять способности, которые должны активироваться при входе в игру.
     Card.prototype.doAfterComingIntoPlay = function (gameContext, continuation) {
-        const {currentPlayer, oppositePlayer, position, updateView} = gameContext;
+        const { currentPlayer, oppositePlayer, position, updateView } = gameContext;
         continuation();
     };
 
@@ -58,7 +58,7 @@ const Card = function () {
     // Можно переопределить в наследниках.
     // Позволяет определять способности, которые должны активироваться при атаке.
     Card.prototype.doBeforeAttack = function (gameContext, continuation) {
-        const {currentPlayer, oppositePlayer, position, updateView} = gameContext;
+        const { currentPlayer, oppositePlayer, position, updateView } = gameContext;
         continuation();
     };
 
@@ -69,7 +69,7 @@ const Card = function () {
     Card.prototype.attack = function (gameContext, continuation) {
         const taskQueue = new TaskQueue();
 
-        const {currentPlayer, oppositePlayer, position, updateView} = gameContext;
+        const { currentPlayer, oppositePlayer, position, updateView } = gameContext;
 
         taskQueue.push(onDone => this.view.showAttack(onDone));
         taskQueue.push(onDone => {
@@ -217,7 +217,7 @@ const Card = function () {
     };
 
     // Строит описание цепочки прототипов с помощью имен конструкторов.
-    function getInheritanceDescription (card) {
+    function getInheritanceDescription(card) {
         const names = [];
         let obj = card;
         while (true) {
@@ -246,3 +246,18 @@ const Card = function () {
 }();
 
 export default Card;
+
+
+
+class Creature extends Card {
+    constructor(name, image, power) {
+        super(name, image, power);
+    }
+
+    getDescriptions() {
+        return [
+            getCreatureDescription(this),
+            ...super.getDescriptions()
+        ];
+    }
+}
