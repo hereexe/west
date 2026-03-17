@@ -250,17 +250,17 @@ export default Card;
 
 
 class Creature extends Card {
-    // constructor(name, maxPower, image) {
-    //     super(name, maxPower, image);
-    // }
+    constructor(name, maxPower, image) {
+        super(name, maxPower, image);
+    }
 
-    // get currentPower() {
-    //     return this._currentPower;
-    // }
+    get currentPower() {
+        return this._currentPower;
+    }
 
-    // set currentPower(value) {
-    //     this._currentPower = Math.min(value, this.maxPower);
-    // }
+    set currentPower(value) {
+        this._currentPower = Math.min(value, this.maxPower);
+    }
 
     getDescriptions() {
         return [
